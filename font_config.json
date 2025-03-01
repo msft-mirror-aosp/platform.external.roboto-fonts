@@ -22,5 +22,19 @@
                 }
             }
         ]
+    },
+    {
+        // Always install roboto font since ThemeHostTest depends on Roboto font.
+        // Theme HostTest replaces sans-serif font with Roboto before executing tests.
+        "name": "roboto",
+        "fonts": [
+            {
+                "file": "Roboto-Regular.ttf",
+                "supportedAxes": "wght,ital",
+                "axes": {
+                    "wdth": "100"
+                }
+            }
+        ]
     }
 ]
