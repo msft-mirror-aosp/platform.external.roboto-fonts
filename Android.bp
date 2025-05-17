@@ -24,6 +24,7 @@ license {
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-OFL",
     ],
     license_text: [
         "NOTICE",
@@ -33,15 +34,14 @@ license {
 filegroup {
     name: "recovery_roboto-fonts_dep",
     export_to_make_var: "recovery_roboto-fonts_dep",
-    srcs: [
-        "*.otf",
-        "*.ttf",
-    ],
+    srcs: [ "font/3.005/Roboto-Regular.ttf", ],
 }
 
-prebuilt_font {
+prebuilt_versioned_font {
     name: "Roboto-Regular.ttf",
-    src: "Roboto-Regular.ttf",
+    versionFlag: "RELEASE_PACKAGE_ROBOTO_FONT_VERSION",
+    defaultVersion: "3.005",
+
     // These symlinks are for backward compatibility.
     symlinks: [
         "DroidSans.ttf",
