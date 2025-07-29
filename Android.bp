@@ -34,13 +34,16 @@ license {
 filegroup {
     name: "recovery_roboto-fonts_dep",
     export_to_make_var: "recovery_roboto-fonts_dep",
-    srcs: [ "font/3.005/Roboto-Regular.ttf", ],
+    srcs: ["font/3.005/Roboto-Regular.ttf"],
 }
 
-prebuilt_versioned_font {
+prebuilt_font {
     name: "Roboto-Regular.ttf",
-    versionFlag: "RELEASE_PACKAGE_ROBOTO_FONT_VERSION",
-    defaultVersion: "3.005",
+    src: select(release_flag("RELEASE_PACKAGE_ROBOTO_FONT_VERSION"), {
+        "3.005": "font/3.005/Roboto-Regular.ttf",
+        "3.011": "font/3.011/Roboto-Regular.ttf",
+        default: "font/3.005/Roboto-Regular.ttf",
+    }),
 
     // These symlinks are for backward compatibility.
     symlinks: [
