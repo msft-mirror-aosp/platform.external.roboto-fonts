@@ -42,7 +42,7 @@ prebuilt_font {
     src: select(release_flag("RELEASE_PACKAGE_ROBOTO_FONT_VERSION"), {
         "3.005": "font/3.005/Roboto-Regular.ttf",
         "3.011": "font/3.011/Roboto-Regular.ttf",
-        "3.014": "font/3.014/Roboto-Regular.ttf",
+        "3.015": "font/3.015/Roboto-Regular.ttf",
         default: "font/3.005/Roboto-Regular.ttf",
     }),
 
